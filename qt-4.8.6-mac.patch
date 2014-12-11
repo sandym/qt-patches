@@ -1,0 +1,37 @@
+diff -Naur qt-4.8.6/mkspecs/features/mac/objective_c.prf qt-4.8.6.bak/mkspecs/features/mac/objective_c.prf
+--- qt-4.8.6/mkspecs/features/mac/objective_c.prf	2014-04-11 04:37:12.000000000 +1000
++++ qt-4.8.6.bak/mkspecs/features/mac/objective_c.prf	2014-12-11 17:26:59.000000000 +1100
+@@ -19,5 +19,6 @@
+ objective_c.output = $$OBJECTIVE_C_OBJECTS_DIR/${QMAKE_FILE_BASE}$${first(QMAKE_EXT_OBJ)}
+ objective_c.input = OBJECTIVE_SOURCES
+ objective_c.name = Compile ${QMAKE_FILE_IN}
++objective_c.skip_preprocess = 1
+ silent:objective_c.commands = @echo objective-c ${QMAKE_FILE_IN} && $$objective_c.commands
+ QMAKE_EXTRA_COMPILERS += objective_c
+diff -Naur qt-4.8.6/qmake/generators/mac/pbuilder_pbx.cpp qt-4.8.6.bak/qmake/generators/mac/pbuilder_pbx.cpp
+--- qt-4.8.6/qmake/generators/mac/pbuilder_pbx.cpp	2014-04-11 04:37:13.000000000 +1000
++++ qt-4.8.6.bak/qmake/generators/mac/pbuilder_pbx.cpp	2014-07-31 20:54:35.000000000 +1000
+@@ -760,6 +760,8 @@
+                 mkt << "compilers:";
+                 const QStringList &compilers = project->values("QMAKE_EXTRA_COMPILERS");
+                 for(int compiler = 0; compiler < compilers.size(); ++compiler) {
++                   if(!project->isEmpty(compilers.at(compiler) + ".skip_preprocess"))
++                       continue;
+                     QString tmp_out = project->first(compilers.at(compiler) + ".output");
+                     if(project->isEmpty(compilers.at(compiler) + ".output"))
+                         continue;
+diff -Naur qt-4.8.6/src/plugins/bearer/corewlan/corewlan.pro qt-4.8.6.bak/src/plugins/bearer/corewlan/corewlan.pro
+--- qt-4.8.6/src/plugins/bearer/corewlan/corewlan.pro	2014-04-11 04:37:12.000000000 +1000
++++ qt-4.8.6.bak/src/plugins/bearer/corewlan/corewlan.pro	2014-07-16 22:12:20.000000000 +1000
+@@ -4,11 +4,7 @@
+ QT = core network
+ LIBS += -framework Foundation -framework SystemConfiguration
+ 
+-contains(QT_CONFIG, corewlan) {
+-    isEmpty(QMAKE_MAC_SDK)|contains(QMAKE_MAC_SDK, "/Developer/SDKs/MacOSX10\.[67]\.sdk") {
+          LIBS += -framework CoreWLAN -framework Security
+-    }
+-}
+ 
+ HEADERS += qcorewlanengine.h \
+            ../qnetworksession_impl.h \
