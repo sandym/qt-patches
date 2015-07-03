@@ -1,0 +1,22 @@
+diff -Naur qt-everywhere-opensource-src-5.3.2/qtbase/mkspecs/features/mac/objective_c.prf qt-5.3.2-src/qtbase/mkspecs/features/mac/objective_c.prf
+--- qt-everywhere-opensource-src-5.3.2/qtbase/mkspecs/features/mac/objective_c.prf	2014-09-11 20:48:07.000000000 +1000
++++ qt-5.3.2-src/qtbase/mkspecs/features/mac/objective_c.prf	2015-07-03 09:03:54.000000000 +1000
+@@ -19,5 +19,6 @@
+ objective_c.output = $$OBJECTIVE_C_OBJECTS_DIR/${QMAKE_FILE_BASE}$${first(QMAKE_EXT_OBJ)}
+ objective_c.input = OBJECTIVE_SOURCES
+ objective_c.name = Compile ${QMAKE_FILE_IN}
++objective_c.skip_preprocess = 1
+ silent:objective_c.commands = @echo objective-c ${QMAKE_FILE_IN} && $$objective_c.commands
+ QMAKE_EXTRA_COMPILERS += objective_c
+diff -Naur qt-everywhere-opensource-src-5.3.2/qtbase/qmake/generators/mac/pbuilder_pbx.cpp qt-5.3.2-src/qtbase/qmake/generators/mac/pbuilder_pbx.cpp
+--- qt-everywhere-opensource-src-5.3.2/qtbase/qmake/generators/mac/pbuilder_pbx.cpp	2014-09-11 20:48:00.000000000 +1000
++++ qt-5.3.2-src/qtbase/qmake/generators/mac/pbuilder_pbx.cpp	2015-07-03 09:14:01.000000000 +1000
+@@ -779,6 +779,8 @@
+                 mkt << "compilers:";
+                 const ProStringList &compilers = project->values("QMAKE_EXTRA_COMPILERS");
+                 for(int compiler = 0; compiler < compilers.size(); ++compiler) {
++                   if(!project->isEmpty(ProKey(compilers.at(compiler).toQString() + ".skip_preprocess")))
++                       continue;
+                     const ProStringList &tmp_out = project->values(ProKey(compilers.at(compiler) + ".output"));
+                     if (tmp_out.isEmpty())
+                         continue;

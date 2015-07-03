@@ -1,6 +1,6 @@
-diff -Naur qt-everywhere-opensource-src-4.8.7/mkspecs/features/mac/objective_c.prf qt-4.8.7/mkspecs/features/mac/objective_c.prf
+diff -Naur qt-everywhere-opensource-src-4.8.7/mkspecs/features/mac/objective_c.prf qt-4.8.7-src/mkspecs/features/mac/objective_c.prf
 --- qt-everywhere-opensource-src-4.8.7/mkspecs/features/mac/objective_c.prf	2015-05-08 00:14:42.000000000 +1000
-+++ qt-4.8.7/mkspecs/features/mac/objective_c.prf	2015-05-27 08:07:59.000000000 +1000
++++ qt-4.8.7-src/mkspecs/features/mac/objective_c.prf	2015-05-27 08:07:59.000000000 +1000
 @@ -19,5 +19,6 @@
  objective_c.output = $$OBJECTIVE_C_OBJECTS_DIR/${QMAKE_FILE_BASE}$${first(QMAKE_EXT_OBJ)}
  objective_c.input = OBJECTIVE_SOURCES
@@ -8,9 +8,9 @@ diff -Naur qt-everywhere-opensource-src-4.8.7/mkspecs/features/mac/objective_c.p
 +objective_c.skip_preprocess = 1
  silent:objective_c.commands = @echo objective-c ${QMAKE_FILE_IN} && $$objective_c.commands
  QMAKE_EXTRA_COMPILERS += objective_c
-diff -Naur qt-everywhere-opensource-src-4.8.7/qmake/generators/mac/pbuilder_pbx.cpp qt-4.8.7/qmake/generators/mac/pbuilder_pbx.cpp
+diff -Naur qt-everywhere-opensource-src-4.8.7/qmake/generators/mac/pbuilder_pbx.cpp qt-4.8.7-src/qmake/generators/mac/pbuilder_pbx.cpp
 --- qt-everywhere-opensource-src-4.8.7/qmake/generators/mac/pbuilder_pbx.cpp	2015-05-08 00:14:42.000000000 +1000
-+++ qt-4.8.7/qmake/generators/mac/pbuilder_pbx.cpp	2015-05-27 08:08:29.000000000 +1000
++++ qt-4.8.7-src/qmake/generators/mac/pbuilder_pbx.cpp	2015-05-27 08:08:29.000000000 +1000
 @@ -760,6 +760,8 @@
                  mkt << "compilers:";
                  const QStringList &compilers = project->values("QMAKE_EXTRA_COMPILERS");
