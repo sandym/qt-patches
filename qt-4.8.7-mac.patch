@@ -1,6 +1,6 @@
 diff -Naur qt-everywhere-opensource-src-4.8.7/mkspecs/features/mac/objective_c.prf qt-4.8.7-src/mkspecs/features/mac/objective_c.prf
 --- qt-everywhere-opensource-src-4.8.7/mkspecs/features/mac/objective_c.prf	2015-05-08 00:14:42.000000000 +1000
-+++ qt-4.8.7-src/mkspecs/features/mac/objective_c.prf	2015-05-27 08:07:59.000000000 +1000
++++ qt-4.8.7-src/mkspecs/features/mac/objective_c.prf	2016-01-07 09:58:10.000000000 +1100
 @@ -19,5 +19,6 @@
  objective_c.output = $$OBJECTIVE_C_OBJECTS_DIR/${QMAKE_FILE_BASE}$${first(QMAKE_EXT_OBJ)}
  objective_c.input = OBJECTIVE_SOURCES
@@ -10,7 +10,7 @@ diff -Naur qt-everywhere-opensource-src-4.8.7/mkspecs/features/mac/objective_c.p
  QMAKE_EXTRA_COMPILERS += objective_c
 diff -Naur qt-everywhere-opensource-src-4.8.7/qmake/generators/mac/pbuilder_pbx.cpp qt-4.8.7-src/qmake/generators/mac/pbuilder_pbx.cpp
 --- qt-everywhere-opensource-src-4.8.7/qmake/generators/mac/pbuilder_pbx.cpp	2015-05-08 00:14:42.000000000 +1000
-+++ qt-4.8.7-src/qmake/generators/mac/pbuilder_pbx.cpp	2015-05-27 08:08:29.000000000 +1000
++++ qt-4.8.7-src/qmake/generators/mac/pbuilder_pbx.cpp	2016-01-07 09:58:10.000000000 +1100
 @@ -760,6 +760,8 @@
                  mkt << "compilers:";
                  const QStringList &compilers = project->values("QMAKE_EXTRA_COMPILERS");
@@ -20,3 +20,21 @@ diff -Naur qt-everywhere-opensource-src-4.8.7/qmake/generators/mac/pbuilder_pbx.
                      QString tmp_out = project->first(compilers.at(compiler) + ".output");
                      if(project->isEmpty(compilers.at(compiler) + ".output"))
                          continue;
+diff -Naur qt-everywhere-opensource-src-4.8.7/src/gui/painting/qpaintengine_mac.cpp qt-4.8.7-src/src/gui/painting/qpaintengine_mac.cpp
+--- qt-everywhere-opensource-src-4.8.7/src/gui/painting/qpaintengine_mac.cpp	2015-05-08 00:14:43.000000000 +1000
++++ qt-4.8.7-src/src/gui/painting/qpaintengine_mac.cpp	2016-01-07 10:21:12.000000000 +1100
+@@ -340,13 +340,7 @@
+     }
+ 
+     // Get the color space from the display profile.
+-    CGColorSpaceRef colorSpace = 0;
+-    CMProfileRef displayProfile = 0;
+-    CMError err = CMGetProfileByAVID((CMDisplayIDType)displayID, &displayProfile);
+-    if (err == noErr) {
+-        colorSpace = CGColorSpaceCreateWithPlatformColorSpace(displayProfile);
+-        CMCloseProfile(displayProfile);
+-    }
++    CGColorSpaceRef colorSpace = CGDisplayCopyColorSpace( displayID );
+ 
+     // Fallback: use generic DeviceRGB
+     if (colorSpace == 0)
