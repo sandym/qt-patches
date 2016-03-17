@@ -1,18 +1,21 @@
 
-Building Qt-4.8.7 x64 on OS X 10.11 with Xcode
-==============================================
+Building Qt-5.5.1 x64 on OS X 10.11 with Xcode 7.x
+==================================================
+
+This version of Qt might be interresting since it's the last one
+to have QtWebKit.
 
 Get the source code tarball, decompress it and rename the directory:
 
-    > tar -zxf qt-everywhere-opensource-src-4.8.7.tar.gz
-    > mv qt-everywhere-opensource-src-4.8.7 qt-src-4.8.7
+    > tar -zxf qt-everywhere-opensource-src-5.5.1.tar.gz
+    > mv qt-everywhere-opensource-src-5.5.1 qt-src-5.5.1
 
 Apply the patch. It fixes a compile error with Apple's latest SDK and
 also fix a bug when using Objective-C souce code with precompiled
 headers and generating an Xcode project (something I need).
 
-    > cd  qt-src-4.8.7
-	> patch -p1 < ../qt-patches/mac/qt-4.8.7/qt-4.8.7-mac.patch
+    > cd  qt-src-5.5.1
+	> patch -p1 < ../qt-patches/mac/qt-5.5.1/qt-5.5.1-mac.patch
 	> cd ..
 
 I do a shadow build, that is, build out of the source tree, so make a
@@ -32,16 +35,12 @@ Xcode 7. I have worked around that by providing the openssl headers of
 an older Mac OS X SDK. This will still work since openssl itself, the
 librairies, are still part of Mac OS X.
 
-This configuration will build qt with 'libstdc++', the c++03 library,
-so no access to c++11 library features. You can add
-'-platform unsupported/macx-clang-libc++' to the configure line to build
-with 'libc++' instead and have access to c++11 library features, but you
-won't be able to deploy on Mac OS X 10.6.
+This configuration build qt with 'libc++', the c++11 library.
 
-    > mkdir qt-build-4.8.7
-    > cd qt-build-4.8.7
+    > mkdir qt-build-5.5.1
+    > cd qt-build-5.5.1
     > export PATH=/usr/bin:/bin:/usr/sbin:/sbin
-    > ../qt-src-4.8.7/configure -debug-and-release -nomake examples -no-qt3support -prefix /usr/local/Qt-4.8.7 -arch x86_64 -openssl -I "$PWD/../qt-patches/mac_openssl_include"
+    > ../qt-src-5.5.1/configure -debug-and-release -nomake examples -prefix /usr/local/Qt-5.5.1 -openssl -I "$PWD/../qt-patches/mac_openssl_include"
 
 Build and install.
 
