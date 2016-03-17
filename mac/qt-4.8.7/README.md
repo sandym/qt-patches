@@ -49,3 +49,5 @@ Build and install.
     > sudo make install
 
 Done!
+
+Tested with Xcode 7.2.1 on Mac OS X 10.11
