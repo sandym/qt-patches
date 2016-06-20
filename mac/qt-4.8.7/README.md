@@ -1,6 +1,6 @@
 
-Building Qt-4.8.7 x64 on OS X 10.11 with Xcode
-==============================================
+Building Qt-4.8.7 x64 on OS X 10.11
+===================================
 
 Get the source code tarball, decompress it and rename the directory:
 

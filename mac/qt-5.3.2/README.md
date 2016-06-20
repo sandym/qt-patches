@@ -1,6 +1,6 @@
 
-Building Qt-5.3.2 x64 on OS X 10.11 with Xcode
-==============================================
+Building Qt-5.3.2 x64 on OS X 10.11
+===================================
 
 This version of Qt is the last one to support Mac OS X 10.6.
 
@@ -45,5 +45,11 @@ Build and install.
     > sudo make install
 
 Done!
+
+If you need the documentation installed as well:
+
+    > make generate_docs
+    > make qch_docs
+    > sudo make install_qch_docs
 
 Tested with Xcode 7.2.1 on Mac OS X 10.11

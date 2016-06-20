@@ -9,7 +9,7 @@ VS2013 and VS2015, 32 or 64 bits should work.
 
 Remove cygwin from PATH if needed.
 
-    > set PATH=%PATH:C:\cygwin\bin;=%
+    > set PATH=%PATH:C:\cygwin64\bin;=%
 
 We need perl:
 

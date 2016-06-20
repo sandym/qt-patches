@@ -1,6 +1,6 @@
 
-Building Qt-5.5.1 x64 on OS X 10.11 with Xcode 7.x
-==================================================
+Building Qt-5.5.1 x64 on OS X 10.11
+===================================
 
 This version of Qt might be interresting since it's the last one
 to have QtWebKit.
@@ -48,5 +48,11 @@ Build and install.
     > sudo make install
 
 Done!
+
+If you need the documentation installed as well:
+
+    > make generate_docs
+    > make qch_docs
+    > sudo make install_qch_docs
 
 Tested with Xcode 7.2.1 on Mac OS X 10.11
