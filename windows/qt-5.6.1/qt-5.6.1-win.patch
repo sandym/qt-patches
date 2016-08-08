@@ -1,0 +1,22 @@
+diff -Naur qt-everywhere-opensource-src-5.6.1/qtwebengine/src/3rdparty/chromium/third_party/ffmpeg/ffmpeg_generated.gni qt-src-5.6.1/qtwebengine/src/3rdparty/chromium/third_party/ffmpeg/ffmpeg_generated.gni
+--- qt-everywhere-opensource-src-5.6.1/qtwebengine/src/3rdparty/chromium/third_party/ffmpeg/ffmpeg_generated.gni	2016-05-26 22:58:54.000000000 +1000
++++ qt-src-5.6.1/qtwebengine/src/3rdparty/chromium/third_party/ffmpeg/ffmpeg_generated.gni	2016-08-05 13:32:25.690599500 +1000
+@@ -89,6 +89,7 @@
+   "libavformat/rmsipr.c",
+   "libavformat/url.c",
+   "libavformat/vorbiscomment.c",
++  "libavformat/w64.c",
+   "libavformat/wavdec.c",
+   "libavutil/atomic.c",
+   "libavutil/autorename_libavutil_cpu.c",
+diff -Naur qt-everywhere-opensource-src-5.6.1/qtwebengine/src/3rdparty/chromium/third_party/ffmpeg/ffmpeg_generated.gypi qt-src-5.6.1/qtwebengine/src/3rdparty/chromium/third_party/ffmpeg/ffmpeg_generated.gypi
+--- qt-everywhere-opensource-src-5.6.1/qtwebengine/src/3rdparty/chromium/third_party/ffmpeg/ffmpeg_generated.gypi	2016-05-26 22:58:54.000000000 +1000
++++ qt-src-5.6.1/qtwebengine/src/3rdparty/chromium/third_party/ffmpeg/ffmpeg_generated.gypi	2016-08-05 13:31:56.091991100 +1000
+@@ -529,6 +529,7 @@
+           'libavformat/rmsipr.c',
+           'libavformat/url.c',
+           'libavformat/vorbiscomment.c',
++          'libavformat/w64.c',
+           'libavformat/wavdec.c',
+           'libavutil/atomic.c',
+           'libavutil/autorename_libavutil_cpu.c',
