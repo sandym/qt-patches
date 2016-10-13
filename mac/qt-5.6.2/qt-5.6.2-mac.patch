@@ -1,0 +1,44 @@
+diff -Naur qt-everywhere-opensource-src-5.6.2/qtconnectivity/src/bluetooth/osx/osxbtcentralmanager_p.h qt-src-5.6.2/qtconnectivity/src/bluetooth/osx/osxbtcentralmanager_p.h
+--- qt-everywhere-opensource-src-5.6.2/qtconnectivity/src/bluetooth/osx/osxbtcentralmanager_p.h	2016-09-12 19:45:32.000000000 +1000
++++ qt-src-5.6.2/qtconnectivity/src/bluetooth/osx/osxbtcentralmanager_p.h	2016-10-12 22:22:47.000000000 +1100
+@@ -60,6 +60,7 @@
+ #include <Foundation/Foundation.h>
+ 
+ #include "corebluetoothwrapper_p.h"
++#include <CoreBluetooth/CoreBluetooth.h>
+ 
+ @class QT_MANGLE_NAMESPACE(OSXBTCentralManager);
+ 
+diff -Naur qt-everywhere-opensource-src-5.6.2/qtconnectivity/src/bluetooth/osx/osxbtledeviceinquiry.mm qt-src-5.6.2/qtconnectivity/src/bluetooth/osx/osxbtledeviceinquiry.mm
+--- qt-everywhere-opensource-src-5.6.2/qtconnectivity/src/bluetooth/osx/osxbtledeviceinquiry.mm	2016-09-12 19:45:32.000000000 +1000
++++ qt-src-5.6.2/qtconnectivity/src/bluetooth/osx/osxbtledeviceinquiry.mm	2016-10-12 22:21:42.000000000 +1100
+@@ -41,6 +41,7 @@
+ #include <QtCore/qdebug.h>
+ 
+ #include "corebluetoothwrapper_p.h"
++#include <CoreBluetooth/CoreBluetooth.h>
+ 
+ QT_BEGIN_NAMESPACE
+ 
+diff -Naur qt-everywhere-opensource-src-5.6.2/qtconnectivity/src/bluetooth/osx/osxbtutility.mm qt-src-5.6.2/qtconnectivity/src/bluetooth/osx/osxbtutility.mm
+--- qt-everywhere-opensource-src-5.6.2/qtconnectivity/src/bluetooth/osx/osxbtutility.mm	2016-09-12 19:45:32.000000000 +1000
++++ qt-src-5.6.2/qtconnectivity/src/bluetooth/osx/osxbtutility.mm	2016-10-12 22:16:55.000000000 +1100
+@@ -37,6 +37,7 @@
+ 
+ #include <QtCore/qendian.h>
+ #include <QtCore/qstring.h>
++#import <CoreBluetooth/CoreBluetooth.h>
+ 
+ #ifndef QT_IOS_BLUETOOTH
+ 
+diff -Naur qt-everywhere-opensource-src-5.6.2/qtwebengine/src/3rdparty/chromium/base/mac/sdk_forward_declarations.h qt-src-5.6.2/qtwebengine/src/3rdparty/chromium/base/mac/sdk_forward_declarations.h
+--- qt-everywhere-opensource-src-5.6.2/qtwebengine/src/3rdparty/chromium/base/mac/sdk_forward_declarations.h	2016-08-26 18:48:27.000000000 +1000
++++ qt-src-5.6.2/qtwebengine/src/3rdparty/chromium/base/mac/sdk_forward_declarations.h	2016-10-12 23:11:37.000000000 +1100
+@@ -15,6 +15,7 @@
+ #import <CoreWLAN/CoreWLAN.h>
+ #import <ImageCaptureCore/ImageCaptureCore.h>
+ #import <IOBluetooth/IOBluetooth.h>
++#import <CoreBluetooth/CoreBluetooth.h>
+ 
+ #include "base/base_export.h"
+ 
