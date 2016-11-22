@@ -1,6 +1,6 @@
 diff -Naur qt-everywhere-opensource-src-5.5.1/qtbase/configure qt-src-5.5.1/qtbase/configure
 --- qt-everywhere-opensource-src-5.5.1/qtbase/configure	2015-10-13 15:35:07.000000000 +1100
-+++ qt-src-5.5.1/qtbase/configure	2016-10-18 16:50:56.000000000 +1100
++++ qt-src-5.5.1/qtbase/configure	2016-11-21 22:35:32.000000000 +1100
 @@ -527,7 +527,7 @@
          exit 2
      fi
@@ -12,7 +12,7 @@ diff -Naur qt-everywhere-opensource-src-5.5.1/qtbase/configure qt-src-5.5.1/qtba
          echo "   agreement by running /usr/bin/xcodebuild without arguments." >&2
 diff -Naur qt-everywhere-opensource-src-5.5.1/qtbase/mkspecs/features/mac/default_pre.prf qt-src-5.5.1/qtbase/mkspecs/features/mac/default_pre.prf
 --- qt-everywhere-opensource-src-5.5.1/qtbase/mkspecs/features/mac/default_pre.prf	2015-10-13 15:35:32.000000000 +1100
-+++ qt-src-5.5.1/qtbase/mkspecs/features/mac/default_pre.prf	2016-10-18 16:47:38.000000000 +1100
++++ qt-src-5.5.1/qtbase/mkspecs/features/mac/default_pre.prf	2016-11-21 22:35:32.000000000 +1100
 @@ -12,7 +12,7 @@
          error("Xcode is not installed in $${QMAKE_XCODE_DEVELOPER_PATH}. Please use xcode-select to choose Xcode installation path.")
  
@@ -24,7 +24,7 @@ diff -Naur qt-everywhere-opensource-src-5.5.1/qtbase/mkspecs/features/mac/defaul
  
 diff -Naur qt-everywhere-opensource-src-5.5.1/qtbase/mkspecs/features/mac/objective_c.prf qt-src-5.5.1/qtbase/mkspecs/features/mac/objective_c.prf
 --- qt-everywhere-opensource-src-5.5.1/qtbase/mkspecs/features/mac/objective_c.prf	2015-10-13 15:35:32.000000000 +1100
-+++ qt-src-5.5.1/qtbase/mkspecs/features/mac/objective_c.prf	2016-10-18 16:45:21.000000000 +1100
++++ qt-src-5.5.1/qtbase/mkspecs/features/mac/objective_c.prf	2016-11-21 22:35:32.000000000 +1100
 @@ -19,5 +19,6 @@
  objective_c.output = $$OBJECTIVE_C_OBJECTS_DIR/${QMAKE_FILE_BASE}$${first(QMAKE_EXT_OBJ)}
  objective_c.input = OBJECTIVE_SOURCES
@@ -34,7 +34,7 @@ diff -Naur qt-everywhere-opensource-src-5.5.1/qtbase/mkspecs/features/mac/object
  QMAKE_EXTRA_COMPILERS += objective_c
 diff -Naur qt-everywhere-opensource-src-5.5.1/qtbase/qmake/generators/mac/pbuilder_pbx.cpp qt-src-5.5.1/qtbase/qmake/generators/mac/pbuilder_pbx.cpp
 --- qt-everywhere-opensource-src-5.5.1/qtbase/qmake/generators/mac/pbuilder_pbx.cpp	2015-10-13 15:35:09.000000000 +1100
-+++ qt-src-5.5.1/qtbase/qmake/generators/mac/pbuilder_pbx.cpp	2016-10-18 16:45:21.000000000 +1100
++++ qt-src-5.5.1/qtbase/qmake/generators/mac/pbuilder_pbx.cpp	2016-11-21 22:35:32.000000000 +1100
 @@ -749,6 +749,8 @@
                  mkt << "compilers:";
                  const ProStringList &compilers = project->values("QMAKE_EXTRA_COMPILERS");
@@ -46,7 +46,7 @@ diff -Naur qt-everywhere-opensource-src-5.5.1/qtbase/qmake/generators/mac/pbuild
                          continue;
 diff -Naur qt-everywhere-opensource-src-5.5.1/qtconnectivity/src/bluetooth/osx/osxbtcentralmanager_p.h qt-src-5.5.1/qtconnectivity/src/bluetooth/osx/osxbtcentralmanager_p.h
 --- qt-everywhere-opensource-src-5.5.1/qtconnectivity/src/bluetooth/osx/osxbtcentralmanager_p.h	2015-10-13 15:35:37.000000000 +1100
-+++ qt-src-5.5.1/qtconnectivity/src/bluetooth/osx/osxbtcentralmanager_p.h	2016-10-19 09:38:07.000000000 +1100
++++ qt-src-5.5.1/qtconnectivity/src/bluetooth/osx/osxbtcentralmanager_p.h	2016-11-21 22:35:32.000000000 +1100
 @@ -38,6 +38,7 @@
  #include "qlowenergyservice.h"
  #include "qbluetoothuuid.h"
@@ -57,7 +57,7 @@ diff -Naur qt-everywhere-opensource-src-5.5.1/qtconnectivity/src/bluetooth/osx/o
  #include <QtCore/qglobal.h>
 diff -Naur qt-everywhere-opensource-src-5.5.1/qtconnectivity/src/bluetooth/osx/osxbtledeviceinquiry.mm qt-src-5.5.1/qtconnectivity/src/bluetooth/osx/osxbtledeviceinquiry.mm
 --- qt-everywhere-opensource-src-5.5.1/qtconnectivity/src/bluetooth/osx/osxbtledeviceinquiry.mm	2015-10-13 15:35:37.000000000 +1100
-+++ qt-src-5.5.1/qtconnectivity/src/bluetooth/osx/osxbtledeviceinquiry.mm	2016-10-19 09:37:42.000000000 +1100
++++ qt-src-5.5.1/qtconnectivity/src/bluetooth/osx/osxbtledeviceinquiry.mm	2016-11-21 22:35:32.000000000 +1100
 @@ -35,6 +35,7 @@
  #include "qbluetoothdeviceinfo.h"
  #include "qbluetoothuuid.h"
@@ -68,7 +68,7 @@ diff -Naur qt-everywhere-opensource-src-5.5.1/qtconnectivity/src/bluetooth/osx/o
  #include <QtCore/qsysinfo.h>
 diff -Naur qt-everywhere-opensource-src-5.5.1/qtconnectivity/src/bluetooth/osx/osxbtutility.mm qt-src-5.5.1/qtconnectivity/src/bluetooth/osx/osxbtutility.mm
 --- qt-everywhere-opensource-src-5.5.1/qtconnectivity/src/bluetooth/osx/osxbtutility.mm	2015-10-13 15:35:37.000000000 +1100
-+++ qt-src-5.5.1/qtconnectivity/src/bluetooth/osx/osxbtutility.mm	2016-10-19 09:36:46.000000000 +1100
++++ qt-src-5.5.1/qtconnectivity/src/bluetooth/osx/osxbtutility.mm	2016-11-21 22:35:32.000000000 +1100
 @@ -43,6 +43,7 @@
  #import <IOBluetooth/objc/IOBluetoothSDPUUID.h>
  
@@ -79,7 +79,7 @@ diff -Naur qt-everywhere-opensource-src-5.5.1/qtconnectivity/src/bluetooth/osx/o
  #include <limits>
 diff -Naur qt-everywhere-opensource-src-5.5.1/qtconnectivity/src/bluetooth/qbluetoothdevicediscoveryagent_osx.mm qt-src-5.5.1/qtconnectivity/src/bluetooth/qbluetoothdevicediscoveryagent_osx.mm
 --- qt-everywhere-opensource-src-5.5.1/qtconnectivity/src/bluetooth/qbluetoothdevicediscoveryagent_osx.mm	2015-10-13 15:35:37.000000000 +1100
-+++ qt-src-5.5.1/qtconnectivity/src/bluetooth/qbluetoothdevicediscoveryagent_osx.mm	2016-10-19 09:38:31.000000000 +1100
++++ qt-src-5.5.1/qtconnectivity/src/bluetooth/qbluetoothdevicediscoveryagent_osx.mm	2016-11-21 22:35:32.000000000 +1100
 @@ -42,6 +42,7 @@
  #include "osx/uistrings_p.h"
  #include "qbluetoothhostinfo.h"
@@ -88,3 +88,145 @@ diff -Naur qt-everywhere-opensource-src-5.5.1/qtconnectivity/src/bluetooth/qblue
  
  #include <QtCore/qloggingcategory.h>
  #include <QtCore/qdatetime.h>
+diff -Naur qt-everywhere-opensource-src-5.5.1/qtwebengine/src/3rdparty/chromium/chrome/installer/mac/third_party/bsdiff/goobsdiff.gyp qt-src-5.5.1/qtwebengine/src/3rdparty/chromium/chrome/installer/mac/third_party/bsdiff/goobsdiff.gyp
+--- qt-everywhere-opensource-src-5.5.1/qtwebengine/src/3rdparty/chromium/chrome/installer/mac/third_party/bsdiff/goobsdiff.gyp	2015-10-13 15:36:39.000000000 +1100
++++ qt-src-5.5.1/qtwebengine/src/3rdparty/chromium/chrome/installer/mac/third_party/bsdiff/goobsdiff.gyp	2016-11-22 06:48:28.000000000 +1100
+@@ -9,8 +9,8 @@
+     ],
+     'link_settings': {
+       'libraries': [
+-        '$(SDKROOT)/usr/lib/libbz2.dylib',
+-        '$(SDKROOT)/usr/lib/libz.dylib',
++        '-lbz2',
++        '-lz',
+       ],
+     },
+     'configurations': {
+diff -Naur qt-everywhere-opensource-src-5.5.1/qtwebengine/src/3rdparty/chromium/content/content_browser.gypi qt-src-5.5.1/qtwebengine/src/3rdparty/chromium/content/content_browser.gypi
+--- qt-everywhere-opensource-src-5.5.1/qtwebengine/src/3rdparty/chromium/content/content_browser.gypi	2015-10-13 15:36:45.000000000 +1100
++++ qt-src-5.5.1/qtwebengine/src/3rdparty/chromium/content/content_browser.gypi	2016-11-22 14:19:37.000000000 +1100
+@@ -1849,7 +1849,7 @@
+       ],
+       'link_settings': {
+         'libraries': [
+-          '$(SDKROOT)/usr/lib/libbsm.dylib',
++          '-lbsm',
+         ],
+       },
+     }],
+diff -Naur qt-everywhere-opensource-src-5.5.1/qtwebengine/src/3rdparty/chromium/net/net.gyp qt-src-5.5.1/qtwebengine/src/3rdparty/chromium/net/net.gyp
+--- qt-everywhere-opensource-src-5.5.1/qtwebengine/src/3rdparty/chromium/net/net.gyp	2015-10-13 15:36:52.000000000 +1100
++++ qt-src-5.5.1/qtwebengine/src/3rdparty/chromium/net/net.gyp	2016-11-22 11:17:12.000000000 +1100
+@@ -427,7 +427,7 @@
+                 '$(SDKROOT)/System/Library/Frameworks/Foundation.framework',
+                 '$(SDKROOT)/System/Library/Frameworks/Security.framework',
+                 '$(SDKROOT)/System/Library/Frameworks/SystemConfiguration.framework',
+-                '$(SDKROOT)/usr/lib/libresolv.dylib',
++                '-lresolv',
+               ]
+             },
+           },
+@@ -442,7 +442,7 @@
+                 '$(SDKROOT)/System/Library/Frameworks/MobileCoreServices.framework',
+                 '$(SDKROOT)/System/Library/Frameworks/Security.framework',
+                 '$(SDKROOT)/System/Library/Frameworks/SystemConfiguration.framework',
+-                '$(SDKROOT)/usr/lib/libresolv.dylib',
++                '-lresolv',
+               ],
+             },
+           },
+diff -Naur qt-everywhere-opensource-src-5.5.1/qtwebengine/src/3rdparty/chromium/printing/backend/print_backend_cups.cc qt-src-5.5.1/qtwebengine/src/3rdparty/chromium/printing/backend/print_backend_cups.cc
+--- qt-everywhere-opensource-src-5.5.1/qtwebengine/src/3rdparty/chromium/printing/backend/print_backend_cups.cc	2015-10-13 15:36:42.000000000 +1100
++++ qt-src-5.5.1/qtwebengine/src/3rdparty/chromium/printing/backend/print_backend_cups.cc	2016-11-22 07:23:23.000000000 +1100
+@@ -9,6 +9,7 @@
+ #include <dlfcn.h>
+ #include <errno.h>
+ #include <pthread.h>
++#include <cups/ppd.h>
+ 
+ #include "base/debug/leak_annotations.h"
+ #include "base/files/file_util.h"
+diff -Naur qt-everywhere-opensource-src-5.5.1/qtwebengine/src/3rdparty/chromium/printing/printing.gyp qt-src-5.5.1/qtwebengine/src/3rdparty/chromium/printing/printing.gyp
+--- qt-everywhere-opensource-src-5.5.1/qtwebengine/src/3rdparty/chromium/printing/printing.gyp	2015-10-13 15:36:42.000000000 +1100
++++ qt-src-5.5.1/qtwebengine/src/3rdparty/chromium/printing/printing.gyp	2016-11-22 11:20:38.000000000 +1100
+@@ -267,7 +267,7 @@
+               ['OS=="mac"', {
+                 'link_settings': {
+                   'libraries': [
+-                    '$(SDKROOT)/usr/lib/libcups.dylib',
++                    '-lcups',
+                   ]
+                 },
+               }, {
+diff -Naur qt-everywhere-opensource-src-5.5.1/qtwebengine/src/3rdparty/chromium/sandbox/mac/sandbox_mac.gypi qt-src-5.5.1/qtwebengine/src/3rdparty/chromium/sandbox/mac/sandbox_mac.gypi
+--- qt-everywhere-opensource-src-5.5.1/qtwebengine/src/3rdparty/chromium/sandbox/mac/sandbox_mac.gypi	2015-10-13 15:36:43.000000000 +1100
++++ qt-src-5.5.1/qtwebengine/src/3rdparty/chromium/sandbox/mac/sandbox_mac.gypi	2016-11-22 14:19:28.000000000 +1100
+@@ -38,7 +38,7 @@
+       ],
+       'link_settings': {
+         'libraries': [
+-          '$(SDKROOT)/usr/lib/libbsm.dylib',
++          '-lbsm',
+         ],
+       },
+       'conditions': [
+diff -Naur qt-everywhere-opensource-src-5.5.1/qtwebengine/src/3rdparty/chromium/third_party/ffmpeg/ffmpeg.gyp qt-src-5.5.1/qtwebengine/src/3rdparty/chromium/third_party/ffmpeg/ffmpeg.gyp
+--- qt-everywhere-opensource-src-5.5.1/qtwebengine/src/3rdparty/chromium/third_party/ffmpeg/ffmpeg.gyp	2015-10-13 15:36:13.000000000 +1100
++++ qt-src-5.5.1/qtwebengine/src/3rdparty/chromium/third_party/ffmpeg/ffmpeg.gyp	2016-11-22 06:46:34.000000000 +1100
+@@ -370,7 +370,7 @@
+               ],
+               'link_settings': {
+                 'libraries': [
+-                  '$(SDKROOT)/usr/lib/libz.dylib',
++                  '-lz',
+                 ],
+               },
+               'xcode_settings': {
+diff -Naur qt-everywhere-opensource-src-5.5.1/qtwebengine/src/3rdparty/chromium/third_party/libxml/libxml.gyp qt-src-5.5.1/qtwebengine/src/3rdparty/chromium/third_party/libxml/libxml.gyp
+--- qt-everywhere-opensource-src-5.5.1/qtwebengine/src/3rdparty/chromium/third_party/libxml/libxml.gyp	2015-10-13 15:36:19.000000000 +1100
++++ qt-src-5.5.1/qtwebengine/src/3rdparty/chromium/third_party/libxml/libxml.gyp	2016-11-22 11:20:20.000000000 +1100
+@@ -69,7 +69,7 @@
+               },
+               'link_settings': {
+                 'libraries': [
+-                  '$(SDKROOT)/usr/lib/libxml2.dylib',
++                  '-lxml2',
+                 ],
+               },
+             }],
+diff -Naur qt-everywhere-opensource-src-5.5.1/qtwebengine/src/3rdparty/chromium/third_party/ots/ots-standalone.gyp qt-src-5.5.1/qtwebengine/src/3rdparty/chromium/third_party/ots/ots-standalone.gyp
+--- qt-everywhere-opensource-src-5.5.1/qtwebengine/src/3rdparty/chromium/third_party/ots/ots-standalone.gyp	2015-10-13 15:36:00.000000000 +1100
++++ qt-src-5.5.1/qtwebengine/src/3rdparty/chromium/third_party/ots/ots-standalone.gyp	2016-11-22 06:48:36.000000000 +1100
+@@ -50,7 +50,7 @@
+         'link_settings': {
+           'libraries': [
+             '/System/Library/Frameworks/ApplicationServices.framework',
+-            '/usr/lib/libz.dylib'
++            '-lz'
+           ],
+         },
+       }],
+diff -Naur qt-everywhere-opensource-src-5.5.1/qtwebengine/src/3rdparty/chromium/third_party/skia/gyp/zlib.gyp qt-src-5.5.1/qtwebengine/src/3rdparty/chromium/third_party/skia/gyp/zlib.gyp
+--- qt-everywhere-opensource-src-5.5.1/qtwebengine/src/3rdparty/chromium/third_party/skia/gyp/zlib.gyp	2015-10-13 15:36:04.000000000 +1100
++++ qt-src-5.5.1/qtwebengine/src/3rdparty/chromium/third_party/skia/gyp/zlib.gyp	2016-11-22 06:47:55.000000000 +1100
+@@ -60,7 +60,7 @@
+                 'conditions': [
+                   [ 'skia_os == "mac" or skia_os == "ios"', {
+                     'libraries': [
+-                      '$(SDKROOT)/usr/lib/libz.dylib',
++                      '-lz',
+                     ]
+                   }, {  # skia_os != "mac" and skia_os != "ios"
+                     'libraries': [
+diff -Naur qt-everywhere-opensource-src-5.5.1/qtwebengine/src/3rdparty/chromium/third_party/sqlite/sqlite.gyp qt-src-5.5.1/qtwebengine/src/3rdparty/chromium/third_party/sqlite/sqlite.gyp
+--- qt-everywhere-opensource-src-5.5.1/qtwebengine/src/3rdparty/chromium/third_party/sqlite/sqlite.gyp	2015-10-13 15:35:52.000000000 +1100
++++ qt-src-5.5.1/qtwebengine/src/3rdparty/chromium/third_party/sqlite/sqlite.gyp	2016-11-22 11:21:14.000000000 +1100
+@@ -48,7 +48,7 @@
+               ],
+               'link_settings': {
+                 'libraries': [
+-                  '$(SDKROOT)/usr/lib/libsqlite3.dylib',
++                  '-lsqlite3',
+                 ],
+               },
+             }],
