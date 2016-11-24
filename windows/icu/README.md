@@ -7,9 +7,9 @@ Start the appropriate VS Command Prompt
 (VS2015 x86 Native Tools Command Prompt, etc). VS2010, VS2012,
 VS2013 and VS2015, 32 or 64 bits should work.
 
-You need cygwin in the PATH.
+You need cygwin in the PATH (after VS tools, but before System32).
 
-    > set PATH=%PATH%;C:\cygwin64\bin;
+    > set PATH=%PATH:C:\Windows\System32;=C:\cygwin64\bin;C:\Windows\System32;%
 
 If you need Windows XP support, set those:
 
@@ -24,7 +24,7 @@ Extract the latest icu source and build:
 
     > cd icu/source
     > chmod +x configure
-    > bash ./runConfigureICU Cygwin/MSVC --prefix=C:/Qt/VS2015/icu
+    > bash ./runConfigureICU Cygwin/MSVC --prefix=C:/Qt/VS2015/icu --with-library-bits={32 or 64}
     > make
     > make install
 
