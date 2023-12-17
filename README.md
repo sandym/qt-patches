@@ -1,3 +1,5 @@
+Note: I'm not actively working with Qt anymore and stop building it years ago. This is totally unmaintained but for some reason people are giving it stars !? So it must be useful for someone somewhere ?
+
 qt-patches
 ==========
 
